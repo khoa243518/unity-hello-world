@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,3 +61,4 @@ public class MyBuilder : MonoBehaviour {
 			// Then as with the Device build.
 	}
 }
+#endif
