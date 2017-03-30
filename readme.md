@@ -60,6 +60,11 @@ public class BatchBuild : MonoBehaviour {
 			BuildOptions.AllowDebugging |
 			BuildOptions.ConnectWithProfiler |
 			BuildOptions.Development;
+			
+			
+			
+			
+			
 
 		// BUILD for Device
 		PlayerSettings.iOS.sdkVersion = iOSSdkVersion.DeviceSDK;
@@ -84,4 +89,8 @@ public class BatchBuild : MonoBehaviour {
 ```
 
 # Configure Build setting
-Now we add builds step "Xcode" & "Invoke Unity3d Editor"
+Now we add build step "Xcode" & "Invoke Unity3d Editor"
+In the Unity3d Editor puglin we now configure:
+
+https://github.nhnent.com/vn-ongame/Jenkins/blob/master/images/unity3d_config.PNG
+
