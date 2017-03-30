@@ -26,3 +26,63 @@ You may need to restart your jenkins.
 * 2. Insert your Item Name
 * 3. Choose Freestyle Project
 * 4. Click “Ok”
+
+You will be redirected to the configuration page of your Jenkins job. Here we will configure everything we need to build our project and test it.
+
+# Jenkins Job Configuration
+First we will configure our connection to git.
+........
+........
+....
+.
+# Configure unity3D project
+You have to make sure your that project can be built by Command line, to do that you have to create a build script and put it in Editor folder of you project
+
+'c#
+#if UNITY_EDITOR
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+using System;
+
+public class BatchBuild : MonoBehaviour {
+	[UnityEditor.MenuItem ( "Tools / Build Project AllScene iOS" )]
+	public  static  void BuildProjectAllSceneiOS () {	
+		EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTarget.iOS);
+		String [] allScene = new  string [EditorBuildSettings.scenes.Length];
+		int i = 0 ;
+		foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes) {
+			allScene [i] = scene.path;
+			i++;
+		}
+
+		BuildOptions opt = BuildOptions.SymlinkLibraries |
+			BuildOptions.AllowDebugging |
+			BuildOptions.ConnectWithProfiler |
+			BuildOptions.Development;
+
+		// BUILD for Device
+		PlayerSettings.iOS.sdkVersion = iOSSdkVersion.DeviceSDK;
+		PlayerSettings.bundleIdentifier = "com.nhnent.boardgame" ;
+		PlayerSettings.statusBarHidden = true ;
+		string errorMsg_Device = BuildPipeline.BuildPlayer (
+			allScene,
+			"Board Game" ,
+			BuildTarget.iOS,
+			opt
+		);
+
+		if ( string .IsNullOrEmpty (errorMsg_Device)) {
+
+		} else {
+
+		}
+		PlayerSettings.iOS.sdkVersion = iOSSdkVersion.SimulatorSDK;
+	}
+}
+#endif
+'
+
+# Configure Build setting
+Now we add builds step "Xcode" & "Invoke Unity3d Editor"
