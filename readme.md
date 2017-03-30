@@ -12,6 +12,7 @@ Before we can start with building and testing we need some plugins.
 * Under the tab “Available” you can search for plugins
 
 <h2>Install the following plugins</h2>
+
 * Git plugin
 * Keychains and Provisioning Profiles Management
 * Test Results Analyzer Plugin
