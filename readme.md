@@ -37,8 +37,7 @@ First we will configure our connection to git.
 .
 # Configure unity3D project
 You have to make sure your that project can be built by Command line, to do that you have to create a build script and put it in Editor folder of you project
-
-'''c#
+```c#
 #if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
@@ -82,7 +81,7 @@ public class BatchBuild : MonoBehaviour {
 	}
 }
 #endif
-'''
+```
 
 # Configure Build setting
 Now we add builds step "Xcode" & "Invoke Unity3d Editor"
