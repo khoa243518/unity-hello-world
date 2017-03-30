@@ -91,6 +91,7 @@ public class BatchBuild : MonoBehaviour {
 # Configure Build setting
 Now we add build step "Xcode" & "Invoke Unity3d Editor"
 In the Unity3d Editor puglin we now configure:
-
-https://github.nhnent.com/vn-ongame/Jenkins/blob/master/images/unity3d_config.PNG
+* image
+Next we config Xcode
+* image
 
