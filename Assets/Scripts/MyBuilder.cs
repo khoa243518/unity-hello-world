@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-public class BatchBuild : MonoBehaviour {
+public class MyBuilder : MonoBehaviour {
 	[UnityEditor.MenuItem ( "Tools / Build Project AllScene Android" )]
 	public  static  void BuildProjectAllSceneAndroid () {
 		EditorUserBuildSettings.SwitchActiveBuildTarget (BuildTarget.Android);
