@@ -92,6 +92,8 @@ public class BatchBuild : MonoBehaviour {
 Now we add build step "Xcode" & "Invoke Unity3d Editor"
 In the Unity3d Editor puglin we now configure:
 * image
+
 Next we config Xcode
+
 * image
 
